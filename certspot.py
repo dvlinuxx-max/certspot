@@ -85,7 +85,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     domain = args.domain.strip().lower().lstrip("*.")
     try:
         rows = query_crtsh(domain, args.timeout)
-    except Exception as exc:  # noqa: BLE001 - report any lookup failure cleanly
+    except Exception as exc:  # noqa: BLE001
         print(f"error: crt.sh lookup failed: {exc}", file=sys.stderr)
         return 2
 
